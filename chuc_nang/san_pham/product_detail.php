@@ -16,36 +16,30 @@
 
 		if(isset($_SESSION['login_user'])) {
 
-		// $comment_content = $_POST['comment_content'];
-		$newcomment = $_POST['content'];
-		// $lencomment = strlen($_POST['content']);
-		
+			$newcomment = $_POST['content'];
+			$lencomment = strlen($_POST['content']);
+			
 
-		$tv_count = pg_query($conn, "select * from review");
-		$count = pg_num_rows($tv_count);
+			$tv_count = pg_query($conn, "select * from review");
+			$count = pg_num_rows($tv_count);
 
-		$comment_id = $count + 1;
-		$username = $_SESSION['login_user'];
-		$star = $_POST['rate1'];
-		$sp_id = $id;
+			$comment_id = $count + 1;
+			$username = $_SESSION['login_user'];
+			$sp_id = $id;
 
-		// if ($lencomment == 0) {
-		// 	// echo "<p class='fail_noti'>Please input your comment</p>";
-		// 	$newcomment = "";
-		// 	$query = "insert into review values ('$comment_id', '$user_id', '$sp_id','$star','$newcomment') ";
-		// 	$result = pg_query($conn, $query);
-		// }
-		// else {
-			$query = "insert into review values ('$comment_id', '$username', '$sp_id','$star','$newcomment') ";
-			$result = pg_query($conn, $query);
-			header("Location: index.php?thamso=product_detail&id=$sp_id");
-			// if ($result) {
-			// 	header("Location: index.php?thamso=login");
-			// 	echo "<script>alert('Đăng ký tài khoản thành công !')</script>";
-			// } else echo pg_last_error($conn);
-		// }
-		}
-		else {
+			if (!isset($_POST['rate1'])) {
+				echo "<p class='fail_noti'>Xin hãy đánh giá điểm cho món ăn này</p>";
+			}
+			else if (pg_affected_rows(pg_query($conn,"SELECT username FROM review WHERE username='$username' and sp_id='$sp_id'")) == 0) {
+				$star = $_POST['rate1'];
+				$query = "insert into review values ('$comment_id', '$username', '$sp_id','$star','$newcomment') ";
+				$result = pg_query($conn, $query);
+				header("Location: index.php?thamso=product_detail&id=$sp_id");
+			} else {
+				echo "<p class='fail_noti'>Bạn đã đánh giá món ăn này rồi</p>";
+			}
+
+		} else {
 			echo "<p class='fail_noti'>Please login to review this product</p>";
 		}
 		

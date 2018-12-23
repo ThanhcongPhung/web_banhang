@@ -29,10 +29,14 @@
 			<?php 
 			if(!isset($_SESSION['login_user'])){
 				echo "<a class='btn btn-danger' href='?thamso=login' role='button' style='margin-bottom: 3px;position: absolute;right: 122px ;top: 30px'>Đăng nhập</a>";
-				echo "<a class='btn btn-success go-to-register' href='#register' role='button' style='margin-bottom: 3px;position: absolute;right: 26px ;top: 30px'>Đăng kí</a>";
+				if (basename($_SERVER['REQUEST_URI']) == "index.php") {
+					echo "<a class='btn btn-success go-to-register' href='#register' role='button' style='margin-bottom: 3px;position: absolute;right: 26px ;top: 30px'>Đăng kí</a>";
+				} else {
+					echo "<a class='btn btn-success go-to-register' href='index.php#register' role='button' style='margin-bottom: 3px;position: absolute;right: 26px ;top: 30px'>Đăng kí</a>";
+				}
 
 			} else if(isset($_SESSION['login_user'])) {
-				echo "<span class='user_name'><span style='color: #fff;'>Xin chào </span>".$_SESSION['login_user']."</span>";
+				echo "<span class='user_name'><span style='color: #fff;'>Xin chào </span><a href='?thamso=profile'>".$_SESSION['login_user']."</a></span>";
 				echo "<a class='btn btn-danger login_button' href='?thamso=logout'>Đăng xuất</a>";
 			}
 			?>
@@ -69,14 +73,6 @@
 				include("chuc_nang/navigation.php");
 			?>
 		</div>
-		<!-- <div class="main-container">
-			<?php 
-				/*
-				
-				
-				include("chuc_nang/quang_cao/right_ads.php"); */
-			?>					
-		</div> -->
 
 		<div class="footer">
 			<?php include("chuc_nang/footer/footer.php"); ?>

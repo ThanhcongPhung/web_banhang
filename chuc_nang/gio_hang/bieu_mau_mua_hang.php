@@ -13,7 +13,7 @@
 ?>
 
 
-<form method='post' action='' >
+<form method='post' action='' style="margin-bottom: 50px;">
 	<input type='hidden' name='thong_tin_khach_hang' value='co' >
 	<div class="info-wrapper" style="width: 45%; margin-left: 10%;">
 		<div>

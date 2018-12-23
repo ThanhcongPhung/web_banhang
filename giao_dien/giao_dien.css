@@ -43,7 +43,6 @@ a
     right: 26px;
 }
 .user_name {
-	color: #ffc107;
 	font-size: 20px;
 	display: inline-block;
     position: absolute;
@@ -51,6 +50,13 @@ a
     right: 155px;
     text-align: right;
     width: 400px;
+}
+.user_name a {
+	color: #ffc107;
+}
+.user_name a:hover {
+	text-decoration: none;
+	color: #d39e00;
 }
 .header {
 	width: 100%;

@@ -7,6 +7,10 @@
 		$dien_thoai=trim($_POST['dien_thoai']);
 		$dia_chi=trim(nl2br($_POST['dia_chi']));
 		$noi_dung=nl2br($_POST['noi_dung']);
+
+		$tv_count = pg_query($conn, "select * from hoa_don");
+    	$count = pg_num_rows($tv_count);
+    	$id = $count + 1;
 		if($ten_nguoi_mua!="" and $dien_thoai!="" and $dia_chi!="")
 		{
 			$hang_duoc_mua="";
@@ -24,7 +28,7 @@
             hang_duoc_mua
             )
             VALUES (
-            NULL ,
+            '$id' ,
             '$ten_nguoi_mua',
             '$email',
             '$dia_chi',

@@ -8,6 +8,9 @@
 		case "logout":
 			include("chuc_nang/login/logout.php");
 		break;
+		case "profile":
+			include("chuc_nang/profile/profile.php");
+		break;
 		case "caterogy":
 			include("chuc_nang/san_pham/caterogy.php");
 		break;
