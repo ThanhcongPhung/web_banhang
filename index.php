@@ -23,6 +23,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="hieu_ung/background.cycle.js"></script>
 	</head>
 	<body style="font-family: 'Quicksand', sans-serif; width: auto; position: relative;">
 		<div class="header">
@@ -34,10 +35,18 @@
 				} else {
 					echo "<a class='btn btn-success go-to-register' href='index.php#register' role='button' style='margin-bottom: 3px;position: absolute;right: 26px ;top: 30px'>Đăng kí</a>";
 				}
-
 			} else if(isset($_SESSION['login_user'])) {
-				echo "<span class='user_name'><span style='color: #fff;'>Xin chào </span><a href='?thamso=profile'>".$_SESSION['login_user']."</a></span>";
-				echo "<a class='btn btn-danger login_button' href='?thamso=logout'>Đăng xuất</a>";
+				echo "<span class='user_name'><span style='color: #fff;'>Xin chào </span>".$_SESSION['login_user']."</span>";
+				echo "<div class= 'circle'><div class ='login_box'><i class='fas fa-user-tie'></i>
+					<div class='user_wrapper'>";
+					echo "	
+					<div class='login_user_part'><a href='?thamso=myuser'>Tài khoản của tôi</a></div>
+					<div class='login_user_part'><a href='?thamso=logout'>Đăng xuất</a></div>
+						
+						
+					</div>
+				</div></div>";
+				//echo "<a class='btn btn-danger login_button' href='?thamso=logout'>Đăng xuất</a>";
 			}
 			?>
 			<a href="./index.php"><img src="hinh_anh/avatar/icon.png" class="web_icon"></a>
@@ -81,3 +90,14 @@
 		
 	</body>
 </html>
+
+<script type="text/javascript">
+	<?php if (!isset($_GET['page'])) $_GET['page'] = 1; ?>
+	var page = <?php echo $_GET['page'] ?>;
+	var all_page =  <?php echo $so_trang ?>;
+	for (i=1;i<=all_page;i++) {
+		if (i == page) {
+			$('#page'+i).addClass('active');
+		} else $('#page'+i).removeClass('active');
+	}
+</script>

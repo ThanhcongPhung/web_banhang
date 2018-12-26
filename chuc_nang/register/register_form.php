@@ -1,15 +1,15 @@
 <head>
-<!-- 		<link rel="stylesheet" type="text/css" href="giao_dien/grid.css">
-		<link rel="stylesheet" type="text/css" href="giao_dien/animate.css">
-		<link rel="stylesheet" type="text/css" href="giao_dien/ionicons.min.css">
-		<link rel="stylesheet" type="text/css" href="giao_dien/normalize.css"> -->
-		<link rel="stylesheet" type="text/css" href="giao_dien/register_form.css">
-		<script src="hieu_ung/scroll_when_click_id.js"></script>
-				<!-- <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-	    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="giao_dien/grid.css">
+        <link rel="stylesheet" type="text/css" href="giao_dien/animate.css">
+        <link rel="stylesheet" type="text/css" href="giao_dien/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="giao_dien/normalize.css">
+        <link rel="stylesheet" type="text/css" href="giao_dien/register_form.css">
+        <script src="hieu_ung/scroll_when_click_id.js"></script>
+                <!-- <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script> -->
-	</head>
-	<section class="section-form" class="register_form" id="register">
+    </head>
+    <section class="section-form" class="register_form" id="register">
             <div class="row">
                 <h2>We're happy to hear from you</h2>
             </div>

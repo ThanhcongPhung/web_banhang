@@ -61,7 +61,7 @@
 		for($i=1;$i<=$so_trang;$i++)
 		{
 			$link="?thamso=caterogy&id=".$_GET['id']."&page=".$i;
-			echo "<a href='$link' >";
+			echo "<a href='$link' id='page".$i."'>";
 				echo $i;echo " ";
 			echo "</a>";
 		}

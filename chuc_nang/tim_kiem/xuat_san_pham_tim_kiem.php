@@ -63,7 +63,7 @@
 			for($i=1;$i<=$so_trang;$i++)
 			{
 				$link="?thamso=tim_kiem&tu_khoa=".$_GET['tu_khoa']."&trang=".$i;
-				echo "<a href='$link' >";
+				echo "<a href='$link' id='page".$i."'>";
 					echo $i;echo " ";
 				echo "</a>";
 			}

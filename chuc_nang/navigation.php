@@ -1,15 +1,19 @@
+
 <?php 
 	if(isset($_GET['thamso'])){$thamso=$_GET['thamso'];}else{$thamso="";}
 	switch($thamso)
 	{
+		case "update":
+			include("chuc_nang/quan_li_user/update.php");
+		break;
+		case "myuser":
+			include("chuc_nang/quan_li_user/myuser.php");
+		break;
 		case "login":
 			include("chuc_nang/login/login_form.php");
 		break;
 		case "logout":
 			include("chuc_nang/login/logout.php");
-		break;
-		case "profile":
-			include("chuc_nang/profile/profile.php");
 		break;
 		case "caterogy":
 			include("chuc_nang/san_pham/caterogy.php");
@@ -40,6 +44,5 @@
 			include("chuc_nang/san_pham/main_product.php");	
 			include("chuc_nang/san_pham/new_product.php"); 
 			include("chuc_nang/san_pham/hot_product.php");
-			include("chuc_nang/register/register_form.php");  
-	}
-?>
+			include("chuc_nang/register/register_form.php");
+		}

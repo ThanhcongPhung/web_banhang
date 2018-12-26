@@ -56,7 +56,7 @@
 		for($i=1;$i<=$so_trang;$i++)
 		{
 			$link="?thamso=all_product&page=".$i;
-			echo "<a href='$link' >";
+			echo "<a href='$link' id='page".$i."'>";
 				echo $i;echo " ";
 			echo "</a>";
 		}

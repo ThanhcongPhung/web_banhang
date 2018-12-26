@@ -1,6 +1,6 @@
 <?php
 
-	$conn =pg_pconnect("host=localhost dbname=db_banhang user=postgres password=221098");
+	$conn =pg_pconnect("host=localhost dbname=db_banhang user=postgres password=123456");
 
 ?> 
 <!-- 

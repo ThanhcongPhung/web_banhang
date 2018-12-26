@@ -1,10 +1,10 @@
 <?php 
 if (!isset($_POST['name'])) {
-	# code...
-	die('');}	
-	include('../../ket_noi.php');
-	header('Content-Type: text/html; charset=UTF-8');
-	$username   = addslashes($_POST['name']);
+    # code...
+    die('');}   
+    include('../../ket_noi.php');
+    header('Content-Type: text/html; charset=UTF-8');
+    $username   = addslashes($_POST['name']);
     $password   = addslashes($_POST['password']);
     $repassword   = addslashes($_POST['repassword']);
     $email      = addslashes($_POST['email']);
@@ -12,7 +12,6 @@ if (!isset($_POST['name'])) {
     $telephone   = addslashes($_POST['telephone']);
     //ma hóa mật khẩu
     $password = md5($password);
-
     //gán id cho new user
     $tv_count = pg_query($conn, "select * from khach_hang");
     $count = pg_num_rows($tv_count);
@@ -57,5 +56,5 @@ if (!isset($_POST['name'])) {
     if ($addmember)
         echo "<script type='text/javascript'>alert('Cảm ơn bạn đã đăng ký thành viên. Hãy tận hưởng niềm vui mua sắm với Food Lover !'); window.location.href='../../index.php?thamso=login';</script>";
     else
-        echo "<script type='text/javascript'>alert('Có lỗi trong quá trình đăng ký.'); window.history.back();</script>"
- ?> 
+        echo "<script type='text/javascript'>alert('Có lỗi trong quá trình đăng ký.'); window.history.back();</script>";
+ ?>

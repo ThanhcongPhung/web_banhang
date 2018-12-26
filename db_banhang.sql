@@ -109,12 +109,12 @@ INSERT INTO "san_pham" ("id", "ten", "gia", "hinh_anh", "noi_dung", "thuoc_menu"
 (37, 'Bánh khúc cây', 170000, '3_171.jpg', '<p>Nội dung của sản phẩm 3_17</p>', 3, '', '', 15),
 (38, 'Chè thập cẩm', 180000, '3_18.jpg', '<p>Nội dung của sản phẩm 3_18</p>', 3, '', '', 0),
 (39, 'Tokbokki', 190000, '3_19.jpg', '<p>Nội dung của sản phẩm 3_19</p>', 2, 'co', '', 0),
-(40, 'Thịt nướng nem lụi', 250000, '3_20.jpg', '<p>Nội dung của sản phẩm 3_20</p>', 2, '', 'co', 2);
-(41, 'Trà sữa dâu tây', 35000, '5_1.jpg', '<p>Nội dung của sản phẩm5_1</p>', 5, '', 'co', 1);
-(42, 'Kiwi đá xay', 40000, '5_2.jpg', '<p>Nội dung của sản phẩm 5_2</p>', 5, '', '', 1);
-(43, 'Trà dứa', 41000, '5_3.jpg', '<p>Nội dung của sản phẩm 5_3</p>', 5, '', '', 1);
-(44, 'Cappuchino socola', 38000, '5_4.jpg', '<p>Nội dung của sản phẩm 5_4</p>', 5, '', '', 1);
-(45, 'Cappuchino trà xanh', 38000, '5_5.jpg', '<p>Nội dung của sản phẩm 5_5</p>', 5, '', '', 1);
+(40, 'Thịt nướng nem lụi', 250000, '3_20.jpg', '<p>Nội dung của sản phẩm 3_20</p>', 2, '', 'co', 2),
+(41, 'Trà sữa dâu tây', 35000, '5_1.jpg', '<p>Nội dung của sản phẩm5_1</p>', 5, '', 'co', 1),
+(42, 'Kiwi đá xay', 40000, '5_2.jpg', '<p>Nội dung của sản phẩm 5_2</p>', 5, '', '', 1),
+(43, 'Trà dứa', 41000, '5_3.jpg', '<p>Nội dung của sản phẩm 5_3</p>', 5, '', '', 1),
+(44, 'Cappuchino socola', 38000, '5_4.jpg', '<p>Nội dung của sản phẩm 5_4</p>', 5, '', '', 1),
+(45, 'Cappuchino trà xanh', 38000, '5_5.jpg', '<p>Nội dung của sản phẩm 5_5</p>', 5, '', '', 1),
 (46, 'Hồng trà sữa', 30000, '5_6.jpg', '<p>Nội dung của sản phẩm 5_6</p>', 5, '', '', 1);
 
 
