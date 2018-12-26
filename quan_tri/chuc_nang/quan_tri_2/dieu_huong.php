@@ -6,6 +6,9 @@
 	
 	switch($thamso)
 	{
+		case "khach_hang":
+			include("chuc_nang/khach_hang/quan_ly_khach_hang.php");
+		break;
 		case "menu_doc":
 			include("chuc_nang/menu_doc/lien_ket_menu_doc.php");
 		break;
@@ -42,40 +45,8 @@
 		case "san_pham_noi_bat":
 			include("chuc_nang/san_pham_noi_bat/san_pham_noi_bat.php");
 		break;
-		case "slideshow":
-			include("chuc_nang/slideshow/lien_ket_slideshow.php");
-		break;
-		case "them_slideshow":
-			include("chuc_nang/slideshow/them_slideshow.php");
-		break;
-		case "quan_ly_slideshow":
-			include("chuc_nang/slideshow/quan_ly_slideshow.php");
-		break;
-		case "sua_slideshow":
-			include("chuc_nang/slideshow/sua_slideshow.php");
-		break;
-		case "them_quang_cao_trai":
-			include("chuc_nang/quang_cao_trai/them_quang_cao_trai.php");
-		break;
-		case "quan_ly_quang_cao_trai":
-			include("chuc_nang/quang_cao_trai/quan_ly_quang_cao_trai.php");
-		break;
-		case "sua_quang_cao_trai":
-			include("chuc_nang/quang_cao_trai/sua_quang_cao_trai.php");
-		break;
-		case "them_quang_cao_phai":
-			include("chuc_nang/quang_cao_phai/them_quang_cao_phai.php");
-		break;
-		case "quan_ly_quang_cao_phai":
-			include("chuc_nang/quang_cao_phai/quan_ly_quang_cao_phai.php");
-		break;
-		case "sua_quang_cao_phai":
-			include("chuc_nang/quang_cao_phai/sua_quang_cao_phai.php");
-		break;
 		case "sua_thong_tin_quan_tri":
 			include("chuc_nang/quan_tri_2/sua_thong_tin_quan_tri.php");
 		break;
-		default: 
-			include("chuc_nang/quan_tri_2/trang_chu_2.php");
 	}
 ?>

@@ -9,7 +9,12 @@
 	$ky_danh=$_POST['ky_danh'];
 	$mat_khau=$tv_2['mat_khau'];
 
-	$mat_khau_tu_form=trim($_POST['mat_khau']);
+	$check_mat_khau_tu_form = $_POST['check_mat_khau'];
+	$mat_khau_tu_form=$_POST['mat_khau'];
+	if ($check_mat_khau_tu_form != $mat_khau_tu_form) {
+		thong_bao_html("Mật khẩu nhập lại không khớp");	
+	}
+
 	if($mat_khau_tu_form!="khong_doi")
 	{
 		$mat_khau=md5($mat_khau_tu_form);

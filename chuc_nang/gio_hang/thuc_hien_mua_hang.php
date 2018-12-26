@@ -10,7 +10,17 @@
 
 		$tv_count = pg_query($conn, "select * from hoa_don");
     	$count = pg_num_rows($tv_count);
-    	$id = $count + 1;
+    	$check = 1;
+    	for ($i=1;$i<=$count;$i++) {
+    		if (pg_affected_rows(pg_query($conn,"SELECT id FROM hoa_don WHERE id='$i'")) > 0) {
+    			continue;
+    		} else {
+    			$id = $i;
+    			$check = 0;
+    			break;
+    		}
+    	}
+ 		if ($check == 1) $id = $count + 1;
 		if($ten_nguoi_mua!="" and $dien_thoai!="" and $dia_chi!="")
 		{
 			$hang_duoc_mua="";
@@ -39,7 +49,7 @@
 			pg_query($conn, $tv);
 			unset($_SESSION['id_them_vao_gio']);
 			unset($_SESSION['sl_them_vao_gio']);
-			$success = "Cảm ơn bạn đã mua hàng tại web site chúng tôi";
+			$success = "Cảm ơn bạn đã mua hàng tại website chúng tôi";
 			echo "<script type='text/javascript'>alert('$success');</script>";
 		}
 		else 

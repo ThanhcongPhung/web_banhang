@@ -54,6 +54,7 @@
 		{
 			$_SESSION['ky_danh']=$ky_danh;
 			$_SESSION['mat_khau']=$mat_khau;
+			header("location: index.php");
 		}
 		else 
 		{

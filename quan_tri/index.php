@@ -34,9 +34,7 @@
 			{
 				if($xac_dinh_dang_nhap=="co")
 				{
-					echo "<center>";
-						include("chuc_nang/quan_tri_2/trang_chu.php");
-					echo "</center>";
+					include("chuc_nang/quan_tri_2/trang_chu.php");
 				}
 			}
 		?>
