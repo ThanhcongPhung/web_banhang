@@ -37,6 +37,11 @@
 		include("chuc_nang/hoa_don/xoa_hoa_don.php");
 		trang_truoc_html();
 	}
+	if(isset($_GET['xoa_khach_hang']))
+	{
+		include("chuc_nang/khach_hang/xoa_khach_hang.php");
+		trang_truoc_html();
+	}
 	if(isset($_GET['xoa_hoa_don_o_trang_chi_tiet']))
 	{
 		include("chuc_nang/hoa_don/xoa_hoa_don_o_trang_chi_tiet.php");

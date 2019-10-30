@@ -10,7 +10,7 @@
 		$arr=pg_fetch_array($result);
 		// echo $arr["ten_khach_hang"];
 	}
-
+	$get_avatar = pg_fetch_array(pg_query($conn,"select * from khach_hang where ten_khach_hang='$user_name'"));
  ?>
 
 
@@ -22,7 +22,9 @@
 <div class="wrapper">
 
 	<div class="row">
-		<div class="col span-1-of-3" style="text-align: center;"><i style="font-size: 220px;" class="fas fa-address-card"></i></div>
+		<div class="col span-1-of-3" style="text-align: center;">
+			<img src="hinh_anh/avatar_user/<?php echo $get_avatar['anh_dai_dien'] ?> " style="width: 250px; border-radius: 50%;">
+		</div>
 		<div class="col span-2-of-3">
 			<div>
 				<?php 

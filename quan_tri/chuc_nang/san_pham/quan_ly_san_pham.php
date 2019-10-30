@@ -72,7 +72,7 @@
 		$tv_1=pg_query($conn,$tv);
 	?>
 
-	<table width="990px" class="tb_a1" >
+	<table width="100%" class="tb_a1" >
 		<tr style="background:#CCFFFF;height:40px;" >
 			<td width="120px" ><b>Hình ảnh</b></td>
 			<td width="450px" ><b>Tên</b></td>
@@ -120,7 +120,7 @@
 					for($i=1;$i<=$so_trang;$i++)
 					{
 						$link_phan_trang="?thamso=quan_ly_san_pham&id_menu=".$id_menu."&trang=".$i;
-						echo "<a href='$link_phan_trang' class='phan_trang' >";
+						echo "<a href='$link_phan_trang' class='phan_trang' id='page".$i."'>";
 							echo $i;
 						echo "</a> ";
 					}

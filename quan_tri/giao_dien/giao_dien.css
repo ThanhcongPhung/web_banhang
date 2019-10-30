@@ -9,3 +9,5 @@ a.phan_trang:hover{color:red;}
 
 a.lk_c2{text-decoration:none;color:black;font-size:22px;line-height:30px;}
 a.lk_c2:hover{color:red;}
+
+.active{color: red !important;}

@@ -10,12 +10,23 @@ if (!isset($_POST['name'])) {
     $email      = addslashes($_POST['email']);
     $address   = addslashes($_POST['address']);
     $telephone   = addslashes($_POST['telephone']);
+    $link_anh_default = "default.png";
     //ma hóa mật khẩu
     $password = md5($password);
     //gán id cho new user
     $tv_count = pg_query($conn, "select * from khach_hang");
     $count = pg_num_rows($tv_count);
-    $id = $count + 1;
+    $check = 1;
+    for ($i=1;$i<=$count;$i++) {
+        if (pg_affected_rows(pg_query($conn,"SELECT id FROM khach_hang WHERE id='$i'")) > 0) {
+            continue;
+        } else {
+            $id = $i;
+            $check = 0;
+            break;
+        }
+    }
+    if ($check == 1) $id = $count + 1;
     //kiểm tra tên có trong database
     if (pg_affected_rows(pg_query($conn,"SELECT ten_khach_hang FROM khach_hang WHERE ten_khach_hang='$username'")) > 0){
         echo "<script type='text/javascript'>alert('Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác.'); window.history.back();</script>";
@@ -36,6 +47,7 @@ if (!isset($_POST['name'])) {
     $addmember = pg_query($conn,"
         INSERT INTO khach_hang(
             id,
+            anh_dai_dien,
             ten_khach_hang,
             mat_khau,
             email,
@@ -44,6 +56,7 @@ if (!isset($_POST['name'])) {
         )
         VALUES(
             '{$id}',
+            '{$link_anh_default}',
             '{$username}',
             '{$password}',
             '{$email}',

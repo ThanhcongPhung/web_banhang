@@ -2,7 +2,7 @@
 	if(!isset($bien_bao_mat)){exit();}
 ?>
 <?php 
-	include("ket_noi.php");	
+	include("../ket_noi.php");	
 	$ten_menu=trim($_POST['ten']);
 	$ten_menu=str_replace("'","&#39;",$ten_menu);
 	$id=$_GET['id'];
@@ -14,9 +14,10 @@
 		WHERE id =$id;
 		";
 		pg_query($conn,$tv);
+		echo "<script type='text/javascript'>alert('Đã sửa danh mục'); window.history.back();</script>";
 	}
 	else 
 	{
-		thong_bao_html("Tên menu chưa được điền vào");
+		echo "<script type='text/javascript'>alert('Chưa điền tên danh mục');</script>";
 	}
 ?>

@@ -2,7 +2,7 @@
 	if(!isset($bien_bao_mat)){exit();}
 ?>
 <?php 
-	include("ket_noi.php");	
+	include("../ket_noi.php");	
 	$ten=trim($_POST['ten']);
 	$ten=str_replace("'","&#39;",$ten);
 	$gia=trim($_POST['gia']);
@@ -46,15 +46,17 @@
 				$duong_dan_anh_cu="../hinh_anh/san_pham/".$_POST['ten_anh'];
 				unlink($duong_dan_anh_cu);
 			}
+
+			echo "<script type='text/javascript'>alert('Đã sửa thông tin sản phẩm'); window.history.back();</script>";
 				
 		}
 		else 
 		{
-			thong_bao_html("Hình ảnh bị trùng tên");
+			echo "<script type='text/javascript'>alert('Hình ảnh bị trùng tên');</script>";
 		}
 	}
 	else 
 	{
-		thong_bao_html("Tên sản phẩm chưa được điền vào");
+		echo "<script type='text/javascript'>alert('Chưa điền tên sản phẩm');</script>";
 	}
 ?>

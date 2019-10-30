@@ -40,3 +40,14 @@
 		?>
 	</body>
 </html>
+
+<script type="text/javascript">
+	<?php if (!isset($_GET['trang'])) $_GET['trang'] = 1; ?>
+	var page = <?php echo $_GET['trang'] ?>;
+	var all_page =  <?php echo $so_trang ?>;
+	for (i=1;i<=all_page;i++) {
+		if (i == page) {
+			$('#page'+i).addClass('active');
+		} else $('#page'+i).removeClass('active');
+	}
+</script>

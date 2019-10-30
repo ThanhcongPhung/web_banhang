@@ -16,7 +16,7 @@
 ?>
 <div style="width:100%;text-align:left; padding: 35px 5%;">
 	<b style="color:blue;font-size:20px" >Quản lý danh mục</b><br><br>
-	<table width="990px" class="tb_a1" >
+	<table width="100%" class="tb_a1" >
 		<tr style="background:#CCFFFF;height:40px;" >
 			<td width="550px" ><b>Tên</b></td>
 			<td align="center" width="220px" ><b>Sửa</b></td>
@@ -51,7 +51,7 @@
 					for($i=1;$i<=$so_trang;$i++)
 					{
 						$link_phan_trang="?thamso=quan_ly_menu_doc&trang=".$i;
-						echo "<a href='$link_phan_trang' class='phan_trang' >";
+						echo "<a href='$link_phan_trang' class='phan_trang' id='page".$i."'>";
 							echo $i;
 						echo "</a> ";
 					}

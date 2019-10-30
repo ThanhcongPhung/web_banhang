@@ -10,7 +10,7 @@
 ?>
 <div style="width:100%;text-align:left; padding: 35px 5%;">
 	<form action="" method="post" >
-		<table width="990px" >
+		<table width="100%" >
 			<tr>
 				<td colspan="2" ><b style="color:blue;font-size:20px" >Sửa thông tin quản trị</b><br><br> </td>			
 			</tr>

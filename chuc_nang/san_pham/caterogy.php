@@ -1,12 +1,12 @@
 <?php 
 	include("ket_noi.php");	
-	$id=$_GET['id'];
+	$id=$_GET['menu'];
 	
 	$so_du_lieu=15;
-	$tv="select count(*) from san_pham where thuoc_menu='$id';";
+	$tv="select count(*) from san_pham where thuoc_menu='$id'";
 	$tv_1=pg_query($conn,$tv);
 	$tv_2=pg_fetch_array($tv_1);
-	$query_name = pg_query($conn,"select * from menu_doc where id='$id';");
+	$query_name = pg_query($conn,"select * from menu_doc where id='$id'");
 	$get_name = pg_fetch_array($query_name);
 	$so_trang=ceil($tv_2[0]/$so_du_lieu);
 ?>
@@ -60,7 +60,7 @@
 	echo "<div class='more' >";
 		for($i=1;$i<=$so_trang;$i++)
 		{
-			$link="?thamso=caterogy&id=".$_GET['id']."&page=".$i;
+			$link="?thamso=caterogy&menu=".$_GET['menu']."&page=".$i;
 			echo "<a href='$link' id='page".$i."'>";
 				echo $i;echo " ";
 			echo "</a>";

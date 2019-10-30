@@ -17,7 +17,7 @@
 	$link_xoa="?xoa_hoa_don_o_trang_chi_tiet=co&id=".$id."&trang=".$_GET['trang'];
 ?>
 <div style="width:100%;text-align:left; padding: 35px 5%;">
-	<table width="990px" >
+	<table width="100%" >
 		<tr>
 			<td width="250px" ><b style="color:blue;font-size:20px" >Sản phẩm được đặt hàng </b><br><br> </td>	
 			<td width="740px" align="right" >
@@ -89,7 +89,7 @@
 
 	</table>
 	<br><br>
-	<table width="990px" >
+	<table width="100%" >
 		<tr>
 			<td width="250px" ><b style="color:blue;font-size:20px" >Thông tin người mua</b><br><br> </td>
 			<td width="810px" align="right" >

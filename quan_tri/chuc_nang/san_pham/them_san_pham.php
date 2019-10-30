@@ -1,9 +1,12 @@
 <?php 
 	if(!isset($bien_bao_mat)){exit();}
 ?>
+<?php
+	include("../ket_noi.php");	
+?>
 <div style="width:100%;text-align:left; padding: 35px 5%;">
 	<form action="" method="post" enctype="multipart/form-data" >
-		<table width="990px" >
+		<table width="100%" >
 			<tr>
 				<td colspan="2" ><b style="color:blue;font-size:20px" >Thêm sản phẩm</b><br><br> </td>
 				
@@ -100,23 +103,7 @@
 			<tr>
 				<td valign="top" >Nội dung : </td>
 				<td>
-					<script type="text/javascript">
-					  tinymce.init({
-						selector: '#noi_dung',
-						theme: 'modern',
-						width: 800,
-						height: 400,
-						plugins: [
-						  'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-						  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-						  'save table contextmenu directionality emoticons template paste textcolor jbimages'
-						],
-						toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons jbimages',
-						relative_urls: false
-					  });
-					  
-					  </script>
-					  <textarea id="noi_dung" name="noi_dung" ></textarea>
+					<textarea id="noi_dung" name="noi_dung" style="width: 500px; height: 100px;" ></textarea>
 				</td>
 			</tr>
 			<tr>

@@ -14,12 +14,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // echo $arr["ten_khach_hang"];
     }
     //// lấy các nội dung mới
-
     $password   = addslashes($_POST['password']);
     $repassword   = addslashes($_POST['repassword']);
     $email      = addslashes($_POST['email']);
     $address   = addslashes($_POST['address']);
     $telephone   = addslashes($_POST['telephone']);
+    $ten_file_anh=$_FILES['hinh_anh']['name'];
+    if ($ten_file_anh == "") {
+        $get_name = pg_fetch_array(pg_query($conn,"select * from khach_hang where ten_khach_hang='$presentname'"));
+        $ten_file_anh = $get_name['anh_dai_dien'];
+    }
     //ma hóa mật khẩu
     $password = md5($password);
     //gán id cho new user
@@ -38,14 +42,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $updatemember = pg_query($conn,"
         UPDATE khach_hang
         SET 
+            anh_dai_dien = '$ten_file_anh',
             mat_khau = '$password',
             email = '$email',
             dia_chi = '$address',
             dien_thoai = '$telephone'
         WHERE ten_khach_hang = '$presentname'
     ");
-    if ($updatemember)
-        echo "<script type='text/javascript'>alert('Bạn đã cập nhật thành công thông tin. Bạn hãy đăng nhập lại để tận hưởng các dịch vụ của chúng tôi'); window.location.href='?thamso=logout';</script>";
+    if ($updatemember) {
+        $duong_dan_anh="hinh_anh/avatar_user/".$ten_file_anh;
+        move_uploaded_file($_FILES['hinh_anh']['tmp_name'],$duong_dan_anh);
+        echo "<script type='text/javascript'>alert('Bạn đã cập nhật thành công thông tin. Bạn hãy đăng nhập lại để tận hưởng các dịch vụ của chúng tôi'); window.location='?thamso=logout';</script>";
+    }
+
     else
          echo "<script type='text/javascript'>alert('Có lỗi trong quá trình đăng ký.'); window.history.back();</script>";
 }
@@ -68,12 +77,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     margin: 0 0';>Tên khách hàng :   ".$_SESSION['login_user']."</h2>"; ?>
             </div>
             <div class="row">
-                <form method="post" action="" class="contact-form" method="POST">
+                <form method="post" action="" class="contact-form" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="hinh_anh" style="display: block;">
+                    </div>
                     <div class="form-group">
                         <label for="name">Mật khẩu</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Mật khẩu">
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="name">Nhập lại mật khẩu</label>
                         <input type="password" class="form-control" name="repassword" id="repassword" placeholder="Nhập lại mật khẩu">
                     </div>

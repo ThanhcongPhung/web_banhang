@@ -2,7 +2,7 @@
 	if(!isset($bien_bao_mat)){exit();}
 ?>
 <?php 
-	include("ket_noi.php");	
+	include("../ket_noi.php");	
 	$id=$_GET['id'];
 	
 	$tv="select * from san_pham where id='$id' ";
@@ -17,4 +17,5 @@
 	
 	$tv="DELETE FROM san_pham WHERE id = $id ";
 	pg_query($conn,$tv);
+	echo "<script type='text/javascript'>alert('Đã xóa sản phẩm ".$tv_2['ten']."'); window.location.href='?thamso=quan_ly_san_pham';</script>";
 ?>

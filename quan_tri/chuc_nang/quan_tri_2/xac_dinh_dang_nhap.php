@@ -58,9 +58,8 @@
 		}
 		else 
 		{
-			thong_bao_abc("Thông tin nhập vào không đúng");
+			echo "<script type='text/javascript'>alert('Thông tin đăng nhập không chính xác'); window.history.back();</script>";
 		}
-		trang_truoc_abc();
 	}
 	
 	if(isset($_SESSION['ky_danh']))

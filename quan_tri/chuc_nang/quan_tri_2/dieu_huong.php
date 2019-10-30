@@ -39,12 +39,6 @@
 		case "xem_hoa_don":
 			include("chuc_nang/hoa_don/xem_hoa_don.php");
 		break;
-		case "san_pham_trang_chu":
-			include("chuc_nang/san_pham_trang_chu/san_pham_trang_chu.php");
-		break;
-		case "san_pham_noi_bat":
-			include("chuc_nang/san_pham_noi_bat/san_pham_noi_bat.php");
-		break;
 		case "sua_thong_tin_quan_tri":
 			include("chuc_nang/quan_tri_2/sua_thong_tin_quan_tri.php");
 		break;
